@@ -170,7 +170,7 @@ class TTSApp:
     os.makedirs(output_directory, exist_ok=True)
 
     try:
-      generator = self.pipeline(text, voice=voice, speed=1, split_pattern=r"\n+")
+      generator = self.pipeline(text, voice=voice, speed=1.5, split_pattern=r"\n+")
 
       # Get a unique time identifier
       time_identifier = time.strftime(timecode_format)
@@ -220,6 +220,8 @@ class TTSApp:
         )
         sf.write(combined_file_path, combined_audio, 24000)
         print(f"Saved combined audio to {combined_file_path}")
+        for file_path in audio_segments:
+          os.remove(file_path)
 
       self.status_label.config(text="Conversion complete!")
       messagebox.showinfo("Success", "Text converted to speech successfully!")
