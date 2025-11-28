@@ -11,6 +11,12 @@ https://github.com/user-attachments/assets/df2eac14-3ba5-4608-a1b9-59fcff8955de
 
 This is a simple Text-to-Speech (TTS) application built using Python and the `kokoro` library. It provides a graphical user interface (GUI) built with `tkinter` that allows users to convert text into speech using various voices. The application supports saving the generated audio to `.wav` files, selecting different voices, and customizing output filenames and directories.
 
+## How to start
+
+```bash
+uv run main.py # Takes some time to start
+```
+
 ## Features
 
 -   **Text Input:** Allows users to enter the text they want to convert to speech.
@@ -24,8 +30,8 @@ This is a simple Text-to-Speech (TTS) application built using Python and the `ko
 
 ## Requirements
 
--   Python 3.9
--   tkinter
+-   Python 3.13
+-   tkinter (OS Package)
 -   kokoro
 -   soundfile
 -   torch
@@ -34,4 +40,5 @@ This is a simple Text-to-Speech (TTS) application built using Python and the `ko
 You can install the required packages using pip:
 
 ```bash
-pip install tkinter kokoro soundfile torch numpy
+uv sync
+```
